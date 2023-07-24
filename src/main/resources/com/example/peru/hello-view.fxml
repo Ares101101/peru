@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.peru.HelloController">
+   <children>
+      <ImageView disable="true" fitHeight="-Infinity" fitWidth="-Infinity" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="https://icei-formacion.com/wp-content/uploads/2019/11/3170-scaled.jpg" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="1707.0" prefWidth="2560.0">
+         <children>
+            <AnchorPane prefHeight="81.0" prefWidth="2406.0">
+               <children>
+                  <MenuBar prefHeight="28.0" prefWidth="2560.0" rotate="144.2" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Ventas">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#openSubWindow" text="Formato de ventas Concar" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Compras">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Formato de compras Concar" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Hola de trabajo">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="generar hoja de trabajo" />
+                          <MenuItem mnemonicParsing="false" text="generar hoja de trabajo" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Cobros">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Formato de cobro de ventas Concar" />
+                            </items>
+                        </Menu>  <Menu mnemonicParsing="false" text="Pagos">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="Formato de pgo de compras Concar" />
+                        </items>
+                    </Menu>
+                    </menus>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
