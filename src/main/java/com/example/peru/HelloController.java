@@ -1,16 +1,16 @@
 package com.example.peru;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.MenuBar;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
+import javafx.scene.layout.TilePane;
 
 public class HelloController {
 
-
+    @FXML
+    private MenuBar panelVenta;
     @FXML
     private Label   ClickMeLabel;
 
@@ -20,19 +20,29 @@ public class HelloController {
     }
     @FXML
     private void openSubWindow() {
-        // Crear una nueva instancia de Stage para la subventana
-        Stage subWindow = new Stage();
 
-        // Crear el contenido de la subventana (en este caso, solo un botón)
-        Button btnClose = new Button("Cerrar Subventana");
-        btnClose.setOnAction(e -> subWindow.close());
-
-        StackPane subRoot = new StackPane(btnClose);
-        Scene subScene = new Scene(subRoot, 200, 150);
-        subWindow.setTitle("Subventana");
-        subWindow.setScene(subScene);
-
-        // Mostrar la subventana
-        subWindow.show();
     }
+    double xOffset, yOffset;
+    @FXML
+    private void mover(){
+        panelVenta.setOnMousePressed(event -> {
+            // Guarda la posición inicial del botón cuando se presiona el ratón
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+        panelVenta.setOnMouseDragged(event -> {
+            // Calcula el desplazamiento desde la posición inicial y ajusta la posición del botón
+            double deltaX = event.getSceneX() - xOffset;
+            double deltaY = event.getSceneY() - yOffset;
+            panelVenta.setLayoutX(panelVenta.getLayoutX() + deltaX);
+            panelVenta.setLayoutY(panelVenta.getLayoutY() + deltaY);
+
+            // Actualiza las nuevas coordenadas iniciales para el siguiente evento de arrastre
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+
+    }
+
 }
